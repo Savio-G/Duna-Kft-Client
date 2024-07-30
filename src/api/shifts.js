@@ -1,12 +1,12 @@
 export const getShifts = () => {
-  return fetch(`http://localhost:5000/shifts`)
+  return fetch(`https://dunanetworks-server.vercel.app/shifts`)
     .then(res => res.json())
 
 }
 
 
 export const getIndividualShifts = (email) => {
-  return fetch(`http://localhost:5000/shifts?email=${email}`)
+  return fetch(`https://dunanetworks-server.vercel.app/shifts?email=${email}`)
     .then(res => res.json())
 
 }

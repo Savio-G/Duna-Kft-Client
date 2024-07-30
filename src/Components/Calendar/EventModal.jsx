@@ -48,7 +48,7 @@ const EventModal = () => {
       time: time
     }
     console.log(shiftInfo)
-    fetch(`http://localhost:5000/addShift`, {
+    fetch(`https://dunanetworks-server.vercel.app/addShift`, {
       method: "POST",
       headers: {
         'content-type': 'application/json'
@@ -73,7 +73,7 @@ const EventModal = () => {
 
     }
 
-    fetch(`http://localhost:5000/shifts/${id}`, {
+    fetch(`https://dunanetworks-server.vercel.app/shifts/${id}`, {
       method: "PUT",
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(updateInfo)
@@ -98,7 +98,7 @@ const EventModal = () => {
       })
   }
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/shifts/${id}`, {
+    fetch(`https://dunanetworks-server.vercel.app/shifts/${id}`, {
       method: "DELETE",
     })
       .then(res => res.json())
@@ -147,8 +147,16 @@ const EventModal = () => {
           <div>
             <select ref={positionRef} defaultValue={`${selectedEvent ? selectedEvent?.position : ''}`} name='position' className="select select-bordered w-full max-w-xs m-3">
               <option disabled selected>Select Position?</option>
-              <option>Han Solo</option>
-              <option>Greedo</option>
+              <option>Electrode Day</option>
+              <option>Electrode Night</option>
+              <option>Assembly Day</option>
+              <option>Assembly Night</option>
+              <option>Night</option>
+              <option>Factory 2 Day</option>
+              <option>Factory 2 Night</option>
+              <option>Project 2 Day</option>
+              <option>Project 2 Night</option>
+              <option>Supt</option>
             </select>
 
             <input ref={timeRef} type="text" name='time' placeholder="Time" defaultValue={`${selectedEvent ? selectedEvent?.time : 'no time assigned'}`} className="input w-full max-w-xs input-bordered m-3" />

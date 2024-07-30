@@ -35,7 +35,7 @@ const Manageshifts = () => {
       date: formattedDate
     }
 
-    fetch(`$http://localhost:5000/addShift`, {
+    fetch(`https://dunanetworks-server.vercel.app/addShift`, {
       method: "POST",
       headers: {
         'content-type': 'application/json'

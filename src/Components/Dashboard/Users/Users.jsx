@@ -6,7 +6,7 @@ const Users = () => {
   const [users, setUsers] = useState(null)
 
   useEffect(() => {
-    fetch(`http://localhost:5000/users`)
+    fetch(`https://dunanetworks-server.vercel.app/users`)
       .then(res => res.json())
       .then(data => setUsers(data))
   }, [])

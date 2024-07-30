@@ -6,7 +6,7 @@ export const saveUser = user => {
     approvalStatus: false,
   }
 
-  fetch(`http://localhost:5000/users/:${user?.email}`, {
+  fetch(`https://dunanetworks-server.vercel.app/users/:${user?.email}`, {
     method: 'PUT',
     headers: {
       'content-type': 'application/json'
@@ -24,7 +24,7 @@ export const updateRole = email => {
     approvalStatus: true,
   }
 
-  return fetch(`http://localhost:5000/users/${email}`, {
+  return fetch(`https://dunanetworks-server.vercel.app/users/${email}`, {
     method: 'PUT',
     headers: {
       'content-type': 'application/json'
@@ -41,7 +41,7 @@ export const updateAdminRole = email => {
     isAdmin: true,
   }
 
-  return fetch(`http://localhost:5000/users/${email}`, {
+  return fetch(`https://dunanetworks-server.vercel.app/users/${email}`, {
     method: 'PUT',
     headers: {
       'content-type': 'application/json'
@@ -53,7 +53,7 @@ export const updateAdminRole = email => {
 }
 
 export const getRole = (email) => {
-  return fetch(`http://localhost:5000/users/${email}`)
+  return fetch(`https://dunanetworks-server.vercel.app/users/${email}`)
     .then(res => res.json())
 
 }
