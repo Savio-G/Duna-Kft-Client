@@ -1,7 +1,7 @@
 import React from 'react';
 
 const IndividualShiftsRow = ({ shift, index }) => {
-  console.log(shift)
+  console.log(typeof (shift.date))
   return (
     <tr>
       <th>{index + 1}</th>

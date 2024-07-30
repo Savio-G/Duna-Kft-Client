@@ -9,8 +9,14 @@ const AllShifts = () => {
       .then(data => {
         setShifts(data)
       })
+
+
   }, [])
-  console.log(shifts)
+
+
+
+
+
   return (
     <div className="overflow-x-auto">
       <table className="table table-xs">

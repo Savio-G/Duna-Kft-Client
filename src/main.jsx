@@ -20,6 +20,8 @@ import Users from './Components/Dashboard/Users/Users.jsx';
 import Manageshifts from './Components/Dashboard/Shifts/Manageshifts.jsx';
 import Shifts from './Components/Dashboard/Shifts/Shifts.jsx';
 import AllShifts from './Components/Dashboard/Shifts/AllShifts.jsx';
+import Calendar from './Components/Calendar/Calendar.jsx';
+import CalendarContextWrapper from './Providers/CalendarContextWrapper.jsx';
 
 
 const router = createBrowserRouter([
@@ -51,7 +53,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/dashboard",
-        element: <Users />
+        element: <Shifts></Shifts>
       },
       {
         path: "/dashboard/users",
@@ -69,6 +71,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/allShifts",
         element: <AllShifts />
+      },
+      {
+        path: "/dashboard/calendar",
+        element: <Calendar />
       }
     ]
   }
@@ -77,9 +83,13 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Authprovider>
-      <RouterProvider router={router} />
-    </Authprovider>
+    <CalendarContextWrapper>
+      <Authprovider>
+
+        <RouterProvider router={router} />
+
+      </Authprovider>
+    </CalendarContextWrapper>
     <ToastContainer className="sm:w-1/3 text-xs" />
   </React.StrictMode>,
 )

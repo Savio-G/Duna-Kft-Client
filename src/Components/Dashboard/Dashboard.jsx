@@ -42,7 +42,7 @@ const Dashboard = () => {
               <>           <li><Link to="/dashboard/manageshifts">Manage Shifts</Link></li>
                 <li><Link to="/dashboard/allShifts">All Shifts</Link></li>
                 <li><Link to="/dashboard/users">All Users</Link></li>
-
+                <li><Link to="/dashboard/calendar">Calendar</Link></li>
 
 
                 <div className='divider'></div>

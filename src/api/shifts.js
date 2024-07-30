@@ -1,5 +1,5 @@
 export const getShifts = () => {
-  return fetch('http://localhost:5000/shifts')
+  return fetch(`http://localhost:5000/shifts`)
     .then(res => res.json())
 
 }
